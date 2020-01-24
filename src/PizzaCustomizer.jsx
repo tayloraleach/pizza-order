@@ -7,6 +7,7 @@ import SauceSelect from './SauseSelect';
 import ToppingsSelect from './ToppingsSelect';
 import pizzaMachine from './PizzaMachine';
 import { OrderControls } from './components/SharedComponents';
+import CheeseSelect from './CheeseSelect';
 
 const BLANK_PIZZA = {
     crust: null,
@@ -18,7 +19,7 @@ const BLANK_PIZZA = {
 const PizzaCustomizer = () => {
     const [machine, send] = useMachine(pizzaMachine);
     const [choices, setChoices] = useState(BLANK_PIZZA);
-    console.log(choices);
+    // console.log(choices);
 
     const handleReset = () => {
         setChoices(BLANK_PIZZA);
@@ -30,6 +31,7 @@ const PizzaCustomizer = () => {
             <Title>{machine.value}</Title>
             {machine.matches('crust') && <CrustSelect setChoices={setChoices} choices={choices} />}
             {machine.matches('sauce') && <SauceSelect choices={choices} setChoices={setChoices} />}
+            {machine.matches('cheese') && <CheeseSelect choices={choices} setChoices={setChoices} />}
             {machine.matches('toppings') && <ToppingsSelect setChoices={setChoices} choices={choices} />}
             {machine.matches('summary') && <Summary choices={choices} />}
             <OrderControls>
@@ -56,6 +58,7 @@ const Container = styled.div`
     height: 90vh;
     margin: 20px auto;
     width: 500px;
+    overflow: hidden;
 `;
 
 const Title = styled.h1`
