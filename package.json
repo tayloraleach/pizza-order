@@ -3,13 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@xstate/react": "^0.8.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "0.9.5",
     "react-spring": "^8.0.27",
-    "styled-components": "^5.0.0"
+    "styled-components": "^5.0.0",
+    "xstate": "^4.7.7"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.13.0",
+    "eslint-config-prettier": "^6.2.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "file-loader": "^5.0.2",
+    "nodemon": "^1.19.2",
+    "prettier": "^1.18.2"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
